@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>100 Filmes Nacionais</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-brand">
+        <span class="brand-number">100</span>
+        <div class="brand-text">
+          <span class="brand-title">Filmes</span>
+          <span class="brand-sub">Nacionais</span>
+        </div>
+      </div>
+      <nav class="header-nav">
+        <button class="nav-btn active" data-filter="todos">Todos</button>
+        <button class="nav-btn" data-filter="drama">Drama</button>
+        <button class="nav-btn" data-filter="comedia">Comédia</button>
+        <button class="nav-btn" data-filter="crime">Crime</button>
+        <button class="nav-btn" data-filter="aventura">Aventura</button>
+        <button class="nav-btn" data-filter="animacao">Animação</button>
+      </nav>
+      <div class="header-search">
+        <input type="text" id="search-input" placeholder="Buscar filme..." />
+        <svg class="search-icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/></svg>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="hero-section">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Curadoria da Crítica Brasileira</p>
+      <h1 class="hero-title">Os maiores<br/><em>filmes nacionais</em></h1>
+      <p class="hero-desc">Uma seleção dos 100 filmes mais importantes do cinema brasileiro, indicados pelos principais críticos do país.</p>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-n">100</span><span class="stat-l">Filmes</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-n">7</span><span class="stat-l">Décadas</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-n">12+</span><span class="stat-l">Gêneros</span></div>
+      </div>
+    </div>
+    <div class="hero-film-strip">
+      <div class="film-holes"></div>
+      <div class="film-holes"></div>
+    </div>
+  </section>
+
+  <!-- DESTAQUES -->
+  <section class="section-destaques">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Destaques da Curadoria</h2>
+        <span class="section-line"></span>
+      </div>
+      <div class="destaques-grid" id="destaques-grid"></div>
+    </div>
+  </section>
+
+  <!-- LISTAGEM -->
+  <section class="section-lista">
+    <div class="container">
+      <div class="lista-controls">
+        <div class="lista-header-row">
+          <h2 class="section-title">Lista Completa</h2>
+          <div class="view-toggle">
+            <button class="view-btn active" data-view="grid" title="Grade">
+              <svg viewBox="0 0 20 20"><rect x="2" y="2" width="7" height="7" rx="1"/><rect x="11" y="2" width="7" height="7" rx="1"/><rect x="2" y="11" width="7" height="7" rx="1"/><rect x="11" y="11" width="7" height="7" rx="1"/></svg>
+            </button>
+            <button class="view-btn" data-view="list" title="Lista">
+              <svg viewBox="0 0 20 20"><rect x="2" y="3" width="16" height="2" rx="1"/><rect x="2" y="9" width="16" height="2" rx="1"/><rect x="2" y="15" width="16" height="2" rx="1"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="sort-row">
+          <label class="sort-label">Ordenar por:</label>
+          <select id="sort-select">
+            <option value="rank">Ranking</option>
+            <option value="ano">Ano</option>
+            <option value="titulo">Título A–Z</option>
+            <option value="nota">Nota</option>
+          </select>
+          <span class="count-badge" id="count-badge">100 filmes</span>
+        </div>
+      </div>
+      <div class="filmes-grid" id="filmes-grid"></div>
+      <div class="empty-state" id="empty-state" style="display:none">
+        <p>Nenhum filme encontrado.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal" id="modal">
+      <button class="modal-close" id="modal-close">&times;</button>
+      <div class="modal-body" id="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>Curadoria baseada nas listas de críticos brasileiros · <strong>Cinema Nacional</strong></p>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
